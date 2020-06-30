@@ -1,4 +1,4 @@
-!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4.puml
+!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/external-existing/C4.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4.puml
 
@@ -11,9 +11,9 @@
 ' ##################################
 
 !global $PERSON_BG_COLOR = "#08427B"
-!global $EXTERNAL_PERSON_BG_COLOR = "#686868"
+!global $EXISTING_PERSON_BG_COLOR = "#686868"
 !global $SYSTEM_BG_COLOR = "#1168BD"
-!global $EXTERNAL_SYSTEM_BG_COLOR = "#999999"
+!global $EXISTING_SYSTEM_BG_COLOR = "#999999"
 
 ' Styling
 ' ##################################
@@ -25,10 +25,10 @@ skinparam rectangle<<person>> {
     BorderColor #073B6F
 }
 
-skinparam rectangle<<external_person>> {
+skinparam rectangle<<existing_person>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
-    BackgroundColor $EXTERNAL_PERSON_BG_COLOR
+    BackgroundColor $EXISTING_PERSON_BG_COLOR
     BorderColor #8A8A8A
 }
 
@@ -39,10 +39,10 @@ skinparam rectangle<<system>> {
     BorderColor #3C7FC0
 }
 
-skinparam rectangle<<external_system>> {
+skinparam rectangle<<existing_system>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
-    BackgroundColor $EXTERNAL_SYSTEM_BG_COLOR
+    BackgroundColor $EXISTING_SYSTEM_BG_COLOR
     BorderColor #8A8A8A
 }
 
@@ -53,10 +53,10 @@ skinparam database<<system>> {
     BorderColor #3C7FC0
 }
 
-skinparam database<<external_system>> {
+skinparam database<<existing_system>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
-    BackgroundColor $EXTERNAL_SYSTEM_BG_COLOR
+    BackgroundColor $EXISTING_SYSTEM_BG_COLOR
     BorderColor #8A8A8A
 }
 
@@ -120,8 +120,8 @@ legend right
 |<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
 |<$PERSON_BG_COLOR> person |
 |<$SYSTEM_BG_COLOR> system|
-|<$EXTERNAL_PERSON_BG_COLOR> external person |
-|<$EXTERNAL_SYSTEM_BG_COLOR> external system |
+|<$EXISTING_PERSON_BG_COLOR> existing person |
+|<$EXISTING_SYSTEM_BG_COLOR> existing system |
 endlegend
 !endprocedure
 
@@ -163,7 +163,7 @@ rectangle "$getPerson($label, $descr, $sprite)" <<person>> as $alias
 !endprocedure
 
 !unquoted procedure Person_Ext($alias, $label, $descr="", $sprite="")
-rectangle "$getPerson($label, $descr, $sprite)" <<external_person>> as $alias
+rectangle "$getPerson($label, $descr, $sprite)" <<existing_person>> as $alias
 !endprocedure
 
 !unquoted procedure System($alias, $label, $descr="", $sprite="")
@@ -171,7 +171,7 @@ rectangle "$getSystem($label, $descr, $sprite)" <<system>> as $alias
 !endprocedure
 
 !unquoted procedure System_Ext($alias, $label, $descr="", $sprite="")
-rectangle "$getSystem($label, $descr, $sprite)" <<external_system>> as $alias
+rectangle "$getSystem($label, $descr, $sprite)" <<existing_system>> as $alias
 !endprocedure
 
 !unquoted procedure SystemDb($alias, $label, $descr="", $sprite="")
@@ -179,7 +179,7 @@ database "$getSystem($label, $descr, $sprite)" <<system>> as $alias
 !endprocedure
 
 !unquoted procedure SystemDb_ext($alias, $label, $descr="", $sprite="")
-database "$getSystem($label, $descr, $sprite)" <<external_system>> as $alias
+database "$getSystem($label, $descr, $sprite)" <<existing_system>> as $alias
 !endprocedure
 
 ' Boundaries

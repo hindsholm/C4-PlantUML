@@ -1,4 +1,4 @@
-!include https://raw.githubusercontent.com/adrianvlupu/C4-PlantUML/latest/C4_Context.puml
+!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/external-existing/C4_Context.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Context.puml
 
@@ -39,8 +39,8 @@ legend right
 |<$PERSON_BG_COLOR> person |
 |<$SYSTEM_BG_COLOR> system |
 |<$CONTAINER_BG_COLOR> container |
-|<$EXTERNAL_PERSON_BG_COLOR> external person |
-|<$EXTERNAL_SYSTEM_BG_COLOR> external system |
+|<$EXISTING_PERSON_BG_COLOR> existing person |
+|<$EXISTING_SYSTEM_BG_COLOR> existing system |
 endlegend
 !endprocedure
 
