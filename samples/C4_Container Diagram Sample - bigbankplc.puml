@@ -1,5 +1,5 @@
 @startuml
-!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/external-existing/C4_Container.puml
+!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Container.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Container.puml
 
