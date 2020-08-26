@@ -1,0 +1,30 @@
+@startuml "Kursinformation - Component Diagram"
+'!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Container.puml
+!include C4_Component.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person(actorA, "Primary user")
+Person_Ext(actorB, "Secondary user")
+
+Container(contFrontend, "Frontend", "Tech")
+
+Container_Boundary(contBoundary, "Backend") {
+  Component(compA, "Component A", "A tech")
+  Component(compB, "Component B", "B tech")
+  Component(compC, "Component C", "C tech")
+  ComponentDb(compDb, "Component DB", "Db Tech")
+  Rel(compA, compB, "Some stuff")
+  Rel(compA, compC, "Some other stuff")
+}
+
+Boundary(custBoundary, "Some boundary", "Custom") {
+  System_Ext(systemB, "Existing system", "Host")
+  ContainerDb(contDb, "DB for sys", "Oracle")
+}
+
+Rel(contFrontend, compA, "calls")
+Rel(compB, contDb, "Persists")
+Rel(compC, systemB, "Use a backend")
+
+@enduml

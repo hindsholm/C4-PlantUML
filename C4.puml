@@ -7,6 +7,7 @@
 !global $ELEMENT_FONT_COLOR = "#FFFFFF"
 !global $LEGEND_FONT_COLOR = "#FFFFFF"
 !global $LEGEND_TITLE_COLOR = "#000000"
+!global $BOUNDARY_BD_COLOR = "#000000"
 
 ' Styling
 ' ##################################
@@ -33,8 +34,8 @@ skinparam database {
 }
 
 skinparam Arrow {
-    Color #666666
-    FontColor #666666
+    Color #444444
+    FontColor #444444
     FontSize 12
 }
 
@@ -42,8 +43,9 @@ skinparam rectangle<<boundary>> {
     Shadowing false
     StereotypeFontSize 0
     FontColor #444444
-    BorderColor #444444
+    BorderColor $BOUNDARY_BD_COLOR
     BorderStyle dashed
+    BorderThickness 3
 }
 
 ' Layout

@@ -10,7 +10,8 @@
 ' Colors
 ' ##################################
 
-!global $COMPONENT_BG_COLOR = "#85BBF0"
+!global $COMPONENT_BG_COLOR = "#BE8A4A"
+!global $COMPONENT_BD_COLOR = "#A9783D"
 
 ' Styling
 ' ##################################
@@ -19,14 +20,14 @@ skinparam rectangle<<component>> {
     StereotypeFontColor #000000
     FontColor #000000
     BackgroundColor $COMPONENT_BG_COLOR
-    BorderColor #78A8D8
+    BorderColor $COMPONENT_BD_COLOR
 }
 
 skinparam database<<component>> {
     StereotypeFontColor #000000
     FontColor #000000
     BackgroundColor $COMPONENT_BG_COLOR
-    BorderColor #78A8D8
+    BorderColor $COMPONENT_BD_COLOR
 }
 
 ' Layout
@@ -36,6 +37,7 @@ skinparam database<<component>> {
 hide stereotype
 legend right
 |<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
+|<$ENTERPRISE_BOUNDARY_BD_COLOR> enterprise / boundary |
 |<$PERSON_BG_COLOR> person |
 |<$SYSTEM_BG_COLOR> system |
 |<$CONTAINER_BG_COLOR> container |

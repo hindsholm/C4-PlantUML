@@ -1,0 +1,31 @@
+@startuml "Kursinformation - Container Diagram"
+'!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Container.puml
+!include C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person_Ext(actorB, "Secondary user")
+
+Enterprise_Boundary(entBoundary, "Nykredit") {
+  Person(actorA, "Primary user")
+  System_Boundary(sysBoundary, "System in focus") {
+    Container(contFrontend, "Frontend", "Tech")
+
+    Container(contBackend, "Backend", "Tech")
+    ContainerDb(contDb, "DB for sys", "Oracle")
+    Rel(contFrontend, contBackend, "Calls", "REST")
+    Rel(contBackend, contDb, "Persists")
+  }
+}
+
+Boundary(custBoundary, "Some boundary", "Custom") {
+  System_Ext(systemB, "Existing system", "Host")
+  SystemDb_ext(systemDbExt, "DB for existing system", "DB2")
+}
+
+Rel(actorA, contFrontend, "Says hello", "REST")
+Rel(actorB, contFrontend, "Says hi", "SOAP")
+Rel(contBackend, systemB, "Use a backend")
+Rel(contBackend, systemDbExt, "Persists")
+
+@enduml
