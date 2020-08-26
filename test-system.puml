@@ -1,0 +1,25 @@
+@startuml "Kursinformation - System Context Diagram"
+'!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Container.puml
+!include C4_Context.puml
+
+LAYOUT_WITH_LEGEND()
+
+Person_Ext(actorB, "Secondary user")
+
+Enterprise_Boundary(entBoundary, "Nykredit") {
+  Person(actorA, "Primary user")
+  System(systemA, "System in focus", "Java")
+  SystemDb(systemDb, "DB for system in focus", "Oracle")
+}
+Boundary(custBoundary, "Some boundary", "Custom") {
+  System_Ext(systemB, "Existing system", "Host")
+  SystemDb_ext(systemDbExt, "DB for existing system", "DB2")
+}
+
+Rel(actorA, systemA, "Says hello", "REST")
+Rel(actorB, systemA, "Says hi", "SOAP")
+Rel(systemA, systemB, "Use a backend")
+Rel(systemA, systemDb, "Persists")
+Rel(systemA, systemDbExt, "Persists")
+
+@enduml
