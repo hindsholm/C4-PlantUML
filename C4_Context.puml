@@ -10,13 +10,16 @@
 ' Colors
 ' ##################################
 
-!global $ENTERPRISE_BOUNDARY_BD_COLOR = "#000000"
-!global $PERSON_BG_COLOR = "#08427B"
-!global $EXISTING_PERSON_BG_COLOR = "#686868"
+!global $ENTERPRISE_BOUNDARY_BD_COLOR = "#555555"
+!global $PERSON_BG_COLOR = "#4F7CA4"
+!global $PERSON_BD_COLOR = "#42688A"
+!global $EXISTING_PERSON_BG_COLOR = "#999999"
+!global $EXISTING_PERSON_BD_COLOR = "#8A8A8A"
 !global $SYSTEM_BG_COLOR = "#4F7CA4"
 !global $SYSTEM_BD_COLOR = "#42688A"
 !global $SYSTEM_BOUNDARY_BD_COLOR = "#4F7CA4"
 !global $EXISTING_SYSTEM_BG_COLOR = "#999999"
+!global $EXISTING_SYSTEM_BD_COLOR = "#8A8A8A"
 
 ' Styling
 ' ##################################
@@ -25,14 +28,14 @@ skinparam rectangle<<person>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
     BackgroundColor $PERSON_BG_COLOR
-    BorderColor #073B6F
+    BorderColor $PERSON_BD_COLOR
 }
 
 skinparam rectangle<<existing_person>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
     BackgroundColor $EXISTING_PERSON_BG_COLOR
-    BorderColor #8A8A8A
+    BorderColor $EXISTING_PERSON_BD_COLOR
 }
 
 skinparam rectangle<<system>> {
@@ -52,7 +55,7 @@ skinparam rectangle<<existing_system>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
     BackgroundColor $EXISTING_SYSTEM_BG_COLOR
-    BorderColor #8A8A8A
+    BorderColor $EXISTING_SYSTEM_BD_COLOR
 }
 
 skinparam database<<system>> {
@@ -66,7 +69,7 @@ skinparam database<<existing_system>> {
     StereotypeFontColor $ELEMENT_FONT_COLOR
     FontColor $ELEMENT_FONT_COLOR
     BackgroundColor $EXISTING_SYSTEM_BG_COLOR
-    BorderColor #8A8A8A
+    BorderColor $EXISTING_SYSTEM_BD_COLOR
 }
 
 skinparam rectangle<<enterprise_boundary>> {
@@ -134,10 +137,8 @@ hide stereotype
 legend right
 |<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
 |<$ENTERPRISE_BOUNDARY_BD_COLOR> enterprise / boundary |
-|<$PERSON_BG_COLOR> person |
-|<$SYSTEM_BG_COLOR> system|
-|<$EXISTING_PERSON_BG_COLOR> existing person |
-|<$EXISTING_SYSTEM_BG_COLOR> existing system |
+|<$SYSTEM_BG_COLOR> system / person |
+|<$EXISTING_SYSTEM_BG_COLOR> existing system / person |
 endlegend
 !endprocedure
 

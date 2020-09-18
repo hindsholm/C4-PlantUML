@@ -38,12 +38,10 @@ hide stereotype
 legend right
 |<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
 |<$ENTERPRISE_BOUNDARY_BD_COLOR> enterprise / boundary |
-|<$PERSON_BG_COLOR> person |
-|<$SYSTEM_BG_COLOR> system |
+|<$SYSTEM_BG_COLOR> system / person |
 |<$CONTAINER_BG_COLOR> container |
 |<$COMPONENT_BG_COLOR> component |
-|<$EXISTING_PERSON_BG_COLOR> existing person |
-|<$EXISTING_SYSTEM_BG_COLOR> existing system |
+|<$EXISTING_SYSTEM_BG_COLOR> existing system / person |
 endlegend
 !endprocedure
 

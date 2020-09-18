@@ -4,16 +4,16 @@
 
 LAYOUT_WITH_LEGEND()
 
-Person_Ext(actorB, "Secondary user")
+Person_Ext(actorB, "Secondary user", "Description")
 
 Enterprise_Boundary(entBoundary, "Nykredit") {
-  Person(actorA, "Primary user")
-  System(systemA, "System in focus", "Java")
-  SystemDb(systemDb, "DB for system in focus", "Oracle")
+  Person(actorA, "Primary user", "Description")
+  System(systemA, "System in focus", "Description")
+  SystemDb(systemDb, "DB for system in focus", "Description")
 }
 Boundary(custBoundary, "Some boundary", "Custom") {
-  System_Ext(systemB, "Existing system", "Host")
-  SystemDb_ext(systemDbExt, "DB for existing system", "DB2")
+  System_Ext(systemB, "Existing system", "Description")
+  SystemDb_ext(systemDbExt, "DB for existing system", "Description")
 }
 
 Rel(actorA, systemA, "Says hello", "REST")

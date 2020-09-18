@@ -4,23 +4,23 @@
 
 LAYOUT_WITH_LEGEND()
 
-Person(actorA, "Primary user")
-Person_Ext(actorB, "Secondary user")
+Person(actorA, "Primary user", "Description")
+Person_Ext(actorB, "Secondary user", "Description")
 
-Container(contFrontend, "Frontend", "Tech")
+Container(contFrontend, "Frontend", "Tech", "Description")
 
 Container_Boundary(contBoundary, "Backend") {
-  Component(compA, "Component A", "A tech")
-  Component(compB, "Component B", "B tech")
-  Component(compC, "Component C", "C tech")
-  ComponentDb(compDb, "Component DB", "Db Tech")
+  Component(compA, "Component A", "A tech", "Description")
+  Component(compB, "Component B", "B tech", "Description")
+  Component(compC, "Component C", "C tech", "Description")
+  ComponentDb(compDb, "Component DB", "Db Tech", "Description")
   Rel(compA, compB, "Some stuff")
   Rel(compA, compC, "Some other stuff")
 }
 
 Boundary(custBoundary, "Some boundary", "Custom") {
-  System_Ext(systemB, "Existing system", "Host")
-  ContainerDb(contDb, "DB for sys", "Oracle")
+  System_Ext(systemB, "Existing system", "Description")
+  ContainerDb(contDb, "DB for sys", "Description")
 }
 
 Rel(contFrontend, compA, "calls")
