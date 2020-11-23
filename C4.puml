@@ -24,6 +24,7 @@ skinparam LegendBackgroundColor transparent
 skinparam LegendFontColor $LEGEND_FONT_COLOR
 
 skinparam HyperlinkUnderline false
+skinparam HyperlinkColor #444444
 
 skinparam rectangle {
     StereotypeFontSize 12
@@ -39,7 +40,6 @@ skinparam Arrow {
     Color #444444
     FontColor #444444
     FontSize 12
-    HyperlinkColor #444444
 }
 
 skinparam rectangle<<boundary>> {
