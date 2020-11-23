@@ -1,5 +1,5 @@
 @startuml
-!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Deployment.puml
+!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/landscape/C4_Deployment.puml
 ' uncomment the following line and comment the first to use locally
 ' !include C4_Deployment.puml
 
