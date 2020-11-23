@@ -183,12 +183,20 @@ rectangle "$getPerson($label, $descr, $sprite)" <<person>> as $alias
 rectangle "$getPerson($label, $descr, $sprite)" <<existing_person>> as $alias
 !endprocedure
 
-!unquoted procedure System($alias, $label, $descr="", $sprite="")
+!unquoted procedure System($alias, $label, $descr="", $sprite="", $url="")
+!if ($url != "")
+rectangle "$getSystem($label, $descr, $sprite)" <<system>> as $alias [[$url]]
+!else
 rectangle "$getSystem($label, $descr, $sprite)" <<system>> as $alias
+!endif
 !endprocedure
 
-!unquoted procedure System_Ext($alias, $label, $descr="", $sprite="")
+!unquoted procedure System_Ext($alias, $label, $descr="", $sprite="", $url="")
+!if ($url != "")
+rectangle "$getSystem($label, $descr, $sprite)" <<existing_system>> as $alias [[$url]]
+!else
 rectangle "$getSystem($label, $descr, $sprite)" <<existing_system>> as $alias
+!endif
 !endprocedure
 
 !unquoted procedure SystemDb($alias, $label, $descr="", $sprite="")
