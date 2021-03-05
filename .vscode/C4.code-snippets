@@ -1,4 +1,49 @@
 {
+	"C4_Include_Context": {
+		"scope": "diagram",
+		"prefix": "Include C4 Context Diagram",
+		"body": [
+			"!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Context.puml",
+			"$0"
+		],
+		"description": "Include C4 Context Diagram"
+	},
+	"C4_Include_Container": {
+		"scope": "diagram",
+		"prefix": "Include C4 Container Diagram",
+		"body": [
+			"!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Container.puml",
+			"$0"
+		],
+		"description": "Include C4 Container Diagram"
+	},
+	"C4_Include_Component": {
+		"scope": "diagram",
+		"prefix": "Include C4 Component Diagram",
+		"body": [
+			"!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Component.puml",
+			"$0"
+		],
+		"description": "Include C4 Component Diagram"
+	},
+	"C4_Include_Deployment": {
+		"scope": "diagram",
+		"prefix": "Include C4 Deployment Diagram",
+		"body": [
+			"!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Deployment.puml",
+			"$0"
+		],
+		"description": "Include C4 Deployment Diagram"
+	},
+	"C4_Include_Dynamic": {
+		"scope": "diagram",
+		"prefix": "Include C4 Dynamic Diagram",
+		"body": [
+			"!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Dynamic.puml",
+			"$0"
+		],
+		"description": "Include C4 Dynamic Diagram"
+	},
 	"C4_Person": {
 		"scope": "diagram",
 		"prefix": "Person",
@@ -20,26 +65,26 @@
 	"C4_Person_Ext": {
 		"scope": "diagram",
 		"prefix": [
-			"External Person",
-			"Person (External)"
+			"Existing Person",
+			"Person (Existing)"
 		],
 		"body": [
 			"Person_Ext(${1:alias}, \"${2:label}\")",
 			"$0"
 		],
-		"description": "Add External Person to C4 diagram"
+		"description": "Add Existing Person to C4 diagram"
 	},
 	"C4_Person_Ext_Descr": {
 		"scope": "diagram",
 		"prefix": [
-			"External Person with Description",
-			"Person (External) with Description"
+			"Existing Person with Description",
+			"Person (Existing) with Description"
 		],
 		"body": [
 			"Person_Ext(${1:alias}, \"${2:label}\", \"${3:description}\")",
 			"$0"
 		],
-		"description": "Add External Person with Description to C4 diagram"
+		"description": "Add Existing Person with Description to C4 diagram"
 	},
 	"C4_Container": {
 		"scope": "diagram",
@@ -147,26 +192,26 @@
 	"C4_System_Ext": {
 		"scope": "diagram",
 		"prefix": [
-			"External System",
-			"System (External)"
+			"Existing System",
+			"System (Existing)"
 		],
 		"body": [
 			"System_Ext(${1:alias}, \"${2:label}\")",
 			"$0"
 		],
-		"description": "Add External System to C4 diagram"
+		"description": "Add Existing System to C4 diagram"
 	},
 	"C4_System_Ext_Descr": {
 		"scope": "diagram",
 		"prefix": [
-			"External System with Description",
-			"System (External) with Description"
+			"Existing System with Description",
+			"System (Existing) with Description"
 		],
 		"body": [
 			"System_Ext(${1:alias}, \"${2:label}\", \"${3:description}\")",
 			"$0"
 		],
-		"description": "Add External System with Description to C4 diagram"
+		"description": "Add Existing System with Description to C4 diagram"
 	},
 	"C4_System_Boundary": {
 		"scope": "diagram",
@@ -212,6 +257,42 @@
 		],
 		"description": "Add unidirectional Relationship with Technology to C4 diagram"
 	},
+	"C4_Relationship_Bi": {
+		"scope": "diagram",
+		"prefix": "Bidirectional Relationship",
+		"body": [
+			"BiRel(${1:from_alias}, ${2:to_alias}, \"${3:label}\")",
+			"$0"
+		],
+		"description": "Add bidirectional Relationship to C4 diagram"
+	},
+	"C4_Relationship_Bi_Techn": {
+		"scope": "diagram",
+		"prefix": "Bidirectional Relationship with Technology",
+		"body": [
+			"BiRel(${1:from_alias}, ${2:to_alias}, \"${3:label}\", \"${4:technology}\")",
+			"$0"
+		],
+		"description": "Add bidirectional Relationship with Technology to C4 diagram"
+	},
+	"C4_Relationship_Index": {
+		"scope": "diagram",
+		"prefix": "Relationship with Index",
+		"body": [
+			"RelIndex(${1:index}, ${2:from_alias}, ${3:to_alias}, \"${4:label}\")",
+			"$0"
+		],
+		"description": "Add unidirectional Relationship to C4 Dynamic Diagram"
+	},
+	"C4_Relationship_Index_Techn": {
+		"scope": "diagram",
+		"prefix": "Relationship with Technology and Index",
+		"body": [
+			"RelIndex(${1:index}, ${2:from_alias}, ${3:to_alias}, \"${4:label}\", \"${5:technology}\")",
+			"$0"
+		],
+		"description": "Add unidirectional Relationship with Technology to C4 Dynamic Diagram"
+	},
 	"C4_Layout_Right": {
 		"scope": "diagram",
 		"prefix": "Layout to Right side",
@@ -251,5 +332,104 @@
 			"}"
 		],
 		"description": "Add a generic boundary to C4 diagram."
+	},
+	"C4_Deployment_Node": {
+		"scope": "diagram",
+		"prefix": "Deployment Node",
+		"body": [
+			"Deployment_Node(${1:alias}, \"${2:label}\"){",
+			"\t$0",
+			"}"
+		],
+		"description": "Add a deployment node to C4 diagram."
+	},
+	"C4_Deployment_Node_Type": {
+		"scope": "diagram",
+		"prefix": [
+			"Deployment Node with type"
+		],
+		"body": [
+			"Deployment_Node(${1:alias}, \"${2:label}\", \"${3:type}\"){",
+			"\t$0",
+			"}"
+		],
+		"description": "Add a deployment node to C4 diagram."
+	},
+	"C4_Dynamic_Increment": {
+		"scope": "diagram",
+		"prefix": [
+			"Increment index"
+		],
+		"body": [
+			"increment(${1:count})",
+			"$0"
+		],
+		"description": "Increment index of C4 Dynamic Diagram."
+	},
+	"C4_Dynamic_Set_Index": {
+		"scope": "diagram",
+		"prefix": [
+			"Set index"
+		],
+		"body": [
+			"setIndex(${1:value})",
+			"$0"
+		],
+		"description": "Set index of C4 Dynamic Diagram"
+	},
+	"C4_Hide_Stereotype": {
+		"scope": "diagram",
+		"prefix": [
+			"Hide stereotype",
+			"No stereotype"
+		],
+		"body": [
+			"HIDE_STEREOTYPE()"
+		],
+		"description": "Hide stereotypes from C4 diagram.."
+	},
+	"C4_Layout_With_Legend": {
+		"scope": "diagram",
+		"prefix": [
+			"Layout with legend",
+			"Legend layout"
+		],
+		"body": [
+			"LAYOUT_WITH_LEGEND()"
+		],
+		"description": "Add legend to C4 diagram."
+	},
+	"C4_Layout_Left_Right": {
+		"scope": "diagram",
+		"prefix": [
+			"Layout left to right",
+			"Left to right layout"
+		],
+		"body": [
+			"LAYOUT_LEFT_RIGHT()"
+		],
+		"description": "Left to right layout for C4 diagram."
+	},
+	"C4_Layout_Top_Down": {
+		"scope": "diagram",
+		"prefix": [
+			"Layout top down",
+			"Top down layout"
+		],
+		"body": [
+			"LAYOUT_TOP_DOWN()"
+		],
+		"description": "Top down layout for C4 diagram."
+	},
+	"C4_Layout_As_Sketch": {
+		"scope": "diagram",
+		"prefix": [
+			"Layout as sketch",
+			"Sketch layout"
+		],
+		"body": [
+			"LAYOUT_AS_SKETCH()"
+		],
+		"description": "Sketch layout for C4 diagram."
 	}
 }
