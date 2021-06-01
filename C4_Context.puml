@@ -1,9 +1,6 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 !include C4.puml
 
-UpdateSkinparamsAndLegendEntry("person", $bgColor=$NK_SYSTEM_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_SYSTEM_BORDER_COLOR)
-UpdateSkinparamsAndLegendEntry("system", $bgColor=$NK_SYSTEM_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_SYSTEM_BORDER_COLOR)
-
 !procedure LAYOUT_WITH_LEGEND()
 hide stereotype
 legend right

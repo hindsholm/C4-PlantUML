@@ -10,3 +10,8 @@
 !global $NK_SYSTEM_COLOR = "#4F7CA4"
 
 !global $NK_FG_COLOR = "#FFFFFF"
+
+UpdateElementStyle(person, $bgColor=$NK_SYSTEM_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_SYSTEM_BORDER_COLOR)
+UpdateElementStyle(system, $bgColor=$NK_SYSTEM_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_SYSTEM_BORDER_COLOR)
+UpdateElementStyle(container, $bgColor=$NK_CONTAINER_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_CONTAINER_BORDER_COLOR)
+UpdateElementStyle(component, $bgColor=$NK_COMPONENT_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_COMPONENT_BORDER_COLOR)
