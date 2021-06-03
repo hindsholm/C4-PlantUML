@@ -1,12 +1,3 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+!global $NK_DIAGRAM_TYPE = "container"
 !include C4.puml
-
-!procedure LAYOUT_WITH_LEGEND()
-hide stereotype
-legend right
-|<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
-|<$NK_SYSTEM_COLOR> system / person |
-|<$EXTERNAL_SYSTEM_BG_COLOR> existing system / person |
-|<$NK_CONTAINER_COLOR> container |
-endlegend
-!endprocedure

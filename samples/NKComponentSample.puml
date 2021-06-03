@@ -1,36 +1,36 @@
 @startuml
 '!includeurl https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Component.puml
 !includeurl ../C4_Component.puml
- 
+
 LAYOUT_WITH_LEGEND()
- 
+
 Person(actorA, "Primary user", "Uses the system in focus")
 Person_Ext(actorB, "Secondary user", "Uses the existing system")
- 
+
 Container(contFrontend, "Frontend", "React", "Client side frontend - deployed separately")
- 
+
 Container_Boundary(contBoundary, "Backend") {
   Component(compBusiness, "Business logic", "JEE", "Implements the business logic")
   ComponentDb(compDb, "Component DB", "Oracle", "Embedded (in the same runtime) database")
   Component(compRepository, "Repository", "JPA", "Encapsules embedded, container and existing DB")
   Component(compConnector, "Connector", "JEE", "Integrates to existing system")
- 
+
   Rel(compRepository, compDb, "Persists")
   Rel(compBusiness, compRepository, "Uses")
   Rel(compBusiness, compConnector, "Uses")
 }
- 
+
 ContainerDb(contDb, "DB for backend", "Oracle", "Specific to the system in focus")
- 
+
 Boundary(custBoundary, "Some boundary", "Custom logical division") {
   System_Ext(systemB, "Existing system", "Mainframe system description")
   SystemDb_Ext(systemDbExt, "DB for existing system", "DB2 table names")
 }
- 
+
 Rel(actorA, contFrontend, "Says hello")
 Rel(actorB, systemB, "Says hi")
 Rel(contFrontend, compBusiness, "calls", "REST")
- 
+
 Rel(compRepository, contDb, "Persists")
 Rel(compRepository, systemDbExt, "Reads")
 Rel(compConnector, systemB, "Use as backend")

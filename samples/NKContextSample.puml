@@ -3,9 +3,9 @@
 !include ../C4_Context.puml
 
 LAYOUT_WITH_LEGEND()
- 
+
 Person_Ext(actorB, "Secondary user", "Uses the existing system")
- 
+
 Enterprise_Boundary(entBoundary, "Nykredit") {
   Person(actorA, "Primary user", "Uses the system in focus")
   System(systemA, "System in focus", "Description\nwith details")
@@ -15,7 +15,7 @@ Boundary(custBoundary, "Some boundary", "Custom logical division") {
   System_Ext(systemB, "Existing system", "Mainframe system description")
   SystemDb_Ext(systemDbExt, "DB for existing system", "DB2 table names")
 }
- 
+
 Rel(actorA, systemA, "Says hello")
 Rel(actorB, systemB, "Says hi")
 Rel(systemA, systemB, "Use as backend", "SOAP")

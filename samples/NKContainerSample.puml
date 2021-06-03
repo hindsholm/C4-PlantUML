@@ -1,11 +1,11 @@
 @startuml
 '!includeurl https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Container.puml
 !include ../C4_Container.puml
- 
+
 LAYOUT_WITH_LEGEND()
- 
+
 Person_Ext(actorB, "Secondary user", "Uses the existing system")
- 
+
 Enterprise_Boundary(entBoundary, "Nykredit") {
   Person(actorA, "Primary user", "Interacts with the frontend container from the system in focus")
   System_Boundary(sysBoundary, "System in focus") {
@@ -16,12 +16,12 @@ Enterprise_Boundary(entBoundary, "Nykredit") {
     Rel(contBackend, contDb, "Persists")
   }
 }
- 
+
 Boundary(custBoundary, "Some boundary", "Custom logical division") {
   System_Ext(systemB, "Existing system", "Mainframe system description")
   SystemDb_Ext(systemDbExt, "DB for existing system", "DB2 table names")
 }
- 
+
 Rel(actorA, contFrontend, "Says hello")
 Rel(actorB, systemB, "Says hi")
 Rel(contBackend, systemB, "Use as backend", "SOAP")
