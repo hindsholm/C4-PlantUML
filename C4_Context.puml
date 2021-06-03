@@ -1,3 +1,3 @@
 !include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
 !global $NK_DIAGRAM_TYPE = "context"
-!include C4.puml
+!include https://raw.githubusercontent.com/hindsholm/C4-PlantUML/stdlib-wrapper/C4.puml
