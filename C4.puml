@@ -6,12 +6,50 @@
 !global $NK_CONTAINER_COLOR = "#4F9E81"
 !global $NK_ENTERPRISE_BORDER_COLOR = "#555555"
 !global $NK_ENTERPRISE_COLOR = "#FFFFFF"
+!global $NK_EXISTING_COLOR = "#969696"
+!global $NK_EXISTING_BORDER_COLOR = "#8A8A8A"
 !global $NK_SYSTEM_BORDER_COLOR = "#42688A"
 !global $NK_SYSTEM_COLOR = "#4F7CA4"
 
 !global $NK_FG_COLOR = "#FFFFFF"
 
+UpdateElementStyle(component, $bgColor=$NK_COMPONENT_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_COMPONENT_BORDER_COLOR)
+UpdateElementStyle(container, $bgColor=$NK_CONTAINER_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_CONTAINER_BORDER_COLOR)
+UpdateElementStyle(external_person, $bgColor=$NK_EXISTING_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_EXISTING_BORDER_COLOR)
+UpdateElementStyle(external_system, $bgColor=$NK_EXISTING_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_EXISTING_BORDER_COLOR)
 UpdateElementStyle(person, $bgColor=$NK_SYSTEM_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_SYSTEM_BORDER_COLOR)
 UpdateElementStyle(system, $bgColor=$NK_SYSTEM_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_SYSTEM_BORDER_COLOR)
-UpdateElementStyle(container, $bgColor=$NK_CONTAINER_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_CONTAINER_BORDER_COLOR)
-UpdateElementStyle(component, $bgColor=$NK_COMPONENT_COLOR, $fontColor=$NK_FG_COLOR, $borderColor=$NK_COMPONENT_BORDER_COLOR)
+
+' General boundary: increase border thickness
+skinparam rectangle<<boundary>> {
+    BorderThickness 3
+}
+
+' Container_Boundary: solid thick green border
+skinparam rectangle<<nk_container_boundary>> {
+    BorderStyle solid
+    BorderThickness 5
+}
+AddElementTag("nk_container_boundary", $borderColor=$NK_CONTAINER_COLOR)
+!unquoted procedure Container_Boundary($alias, $label)
+    Boundary($alias, $label, "Container", "nk_container_boundary")
+!endprocedure
+
+' Enterprise_Boundary: solid thick black border
+skinparam rectangle<<nk_enterprise_boundary>> {
+    BorderStyle solid
+}
+AddElementTag("nk_enterprise_boundary", $borderColor="#000000")
+!unquoted procedure Enterprise_Boundary($alias, $label)
+    Boundary($alias, $label, "Enterprise", "nk_enterprise_boundary")
+!endprocedure
+
+' System_Boundary: solid thick blue border
+skinparam rectangle<<nk_system_boundary>> {
+    BorderStyle solid
+    BorderThickness 5
+}
+AddElementTag("nk_system_boundary", $borderColor=$NK_SYSTEM_COLOR)
+!unquoted procedure System_Boundary($alias, $label)
+    Boundary($alias, $label, "System", "nk_system_boundary")
+!endprocedure
