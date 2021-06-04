@@ -1,5 +1,5 @@
 @startuml
-'!includeurl https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Context.puml
+'!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Context.puml
 !include ../C4_Context.puml
 
 LAYOUT_WITH_LEGEND()

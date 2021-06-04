@@ -1,6 +1,6 @@
 @startuml
-'!includeurl https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Component.puml
-!includeurl ../C4_Component.puml
+'!include https://raw.githubusercontent.com/Nykredit/C4-PlantUML/production/C4_Component.puml
+!include ../C4_Component.puml
 
 LAYOUT_WITH_LEGEND()
 
