@@ -61,7 +61,7 @@ legend right
 |<color:$LEGEND_TITLE_COLOR>**Legend**</color> |
 |<$NK_SYSTEM_COLOR> system / person |
 |<$EXTERNAL_SYSTEM_BG_COLOR> existing system / person |
-!if ($NK_DIAGRAM_TYPE == "container") || ($NK_DIAGRAM_TYPE == "component")
+!if ($NK_DIAGRAM_TYPE == "container") || ($NK_DIAGRAM_TYPE == "component") || ($NK_DIAGRAM_TYPE == "dynamic")
 |<$NK_CONTAINER_COLOR> container |
 !endif
 !if ($NK_DIAGRAM_TYPE == "component")
